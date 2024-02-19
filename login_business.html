@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script src="./login_business.js"></script>
+    <script>
+      $(function(){
+        $("#header").load("./common/header.html"); 
+      });
+    </script>      
+  </head>
+  <body>
+    <div id="header"></div>
+    <h1>Facebook login for Business</h1>
+    <h2>App Id: 733991208827885 (non-using)</h2>
+    <h2>App Type: Business </h2>
+    <h2>Configuration Id: 3794148927488845</h2>
+    <br><br>
+    <div id="authResponse"></div>
+    <!-- <div class="fb-login-button" data-width="400px" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+    <fb:login-button 
+        config_id="3794148927488845"
+        onlogin="checkLoginState();"
+        size="xlarge"
+        >
+    </fb:login-button>
+    <br><br>
+    <button onclick="getBusinessId();">Get businessId</button>
+    <div id="businessId"></div>
+    <br><br>
+    
+    <button onclick="getListPostHaveBeenTagged()">Get list post that have been tagged</button>
+    <div id="listPost"></div> 
+
+
+
+    
+  </body>
+</html>
